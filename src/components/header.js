@@ -1,42 +1,65 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  titleLink: {
+    color: '#fff',
+    textDecoration: 'none',
+  },
+  navDiv: {
+    display: 'flex',
+    flexGrow: 0.2,
+  },
+}))
+
+const Header = () => {
+  const classes = useStyles()
+
+  return (
+    <div className={classes.root}>
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            <Link to="/" className={classes.titleLink}>
+              Rick N Morty
+            </Link>
+          </Typography>
+          <div className={classes.navDiv}>
+            <Typography className={classes.title} variant="subtitle1" noWrap>
+              <Link to="/About" className={classes.titleLink}>
+                About
+              </Link>
+            </Typography>
+            <Typography className={classes.title} variant="subtitle1" noWrap>
+              <Link to="/Characters" className={classes.titleLink}>
+                Characters
+              </Link>
+            </Typography>
+            <Typography className={classes.title} variant="subtitle1" noWrap>
+              <Link to="/About" className={classes.titleLink}>
+                Episodes
+              </Link>
+            </Typography>
+          </div>
+        </Toolbar>
+      </AppBar>
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  )
 }
 
 export default Header
