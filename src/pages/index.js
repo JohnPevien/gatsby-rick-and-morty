@@ -68,9 +68,7 @@ const IndexPage = () => {
             Get started:
           </Typography>
 
-          <ButtonGroup
-            color="primary"
-            aria-label="outlined primary button group"
+          <div
             className={classes.getStartedButtonGroup}
           >
             <Link to="/characters">
@@ -79,7 +77,7 @@ const IndexPage = () => {
             <Link to="/episodes">
               <Button color="primary">Episodes</Button>
             </Link>
-          </ButtonGroup>
+          </div>
         </Paper>
       </Container>
     </Layout>
