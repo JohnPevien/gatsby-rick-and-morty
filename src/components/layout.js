@@ -6,11 +6,9 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
-
+import Header from './Header'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
@@ -31,17 +29,13 @@ const Layout = ({ children }) => {
       <Container maxWidth="lg">
         <Typography
           component="main"
-          style={{ height: '100vh', marginTop: '5em' }}
+          style={{ height: '100vh', marginTop: '7em' }}
         >
           {children}
         </Typography>
       </Container>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography'
 
 const styles = makeStyles({
   card: {
-    maxWidth: 345,
+    maxWidth: 375,
+    width: '100%',
   },
   media: {
     height: 270,
@@ -20,7 +21,7 @@ const characterCard = ({ imgUrl, name }) => {
   const classes = styles()
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} raised>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -31,9 +32,6 @@ const characterCard = ({ imgUrl, name }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          {/* <Typography variant="body2" color="textSecondary" component="p">
-            {description}
-          </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
