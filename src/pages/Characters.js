@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import CharacterCard from '../components/CharacterCard'
 import { fetchCharacters } from '../api/rickandmorty'
 
