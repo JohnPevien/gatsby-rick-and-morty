@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-theme-material-ui'
 
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -61,7 +61,7 @@ const Header = () => {
                 </Typography>
               </Hidden>
             </Link>
-            <Link to="/episodes" className={classes.titleLink}>
+            {/* <Link to="/episodes" className={classes.titleLink}>
               <Hidden only={['xl', 'lg', 'md', 'sm']}>
                 <LibraryBooksOutlinedIcon />
               </Hidden>
@@ -75,7 +75,7 @@ const Header = () => {
                   Episodes
                 </Typography>
               </Hidden>
-            </Link>
+            </Link> */}
           </div>
         </Toolbar>
       </AppBar>

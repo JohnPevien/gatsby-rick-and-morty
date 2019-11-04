@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Button } from 'gatsby-theme-material-ui'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
@@ -7,7 +7,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
-import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import MaterialLink from '@material-ui/core/Link'
 
 const styles = makeStyles(theme => ({
   title: {
@@ -27,9 +28,6 @@ const styles = makeStyles(theme => ({
   getStartedButtonGroup: {
     display: 'flex',
     justifyContent: 'center',
-    button: {
-      fonSize: '3em',
-    },
   },
 }))
 
@@ -40,12 +38,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Container maxWidth="md">
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} elevation={10}>
           <Typography
             variant="h2"
             align="center"
             paragraph
             className={classes.title}
+            color="primary"
           >
             Rick N Morty Browser
           </Typography>
@@ -55,28 +54,23 @@ const IndexPage = () => {
             paragraph
             className={classes.subtitle}
           >
-            A gatsby project powered by rick and morty API
+            A{' '}
+            <MaterialLink href="https://www.gatsbyjs.org/">Gatsby</MaterialLink>{' '}
+            Project Powered By{' '}
+            <MaterialLink href="https://rickandmortyapi.com/">
+              Rick And Morty API
+            </MaterialLink>
           </Typography>
 
-          <Typography
-            variant="h6"
-            align="center"
-            paragraph
-            className={classes.subtitle}
-          >
-            Get started:
-          </Typography>
-
-          <div
+          <ButtonGroup
             className={classes.getStartedButtonGroup}
+            size="large"
+            color="primary"
+            variant="text"
           >
-            <Link to="/characters">
-              <Button color="primary">Characters</Button>
-            </Link>
-            <Link to="/episodes">
-              <Button color="primary">Episodes</Button>
-            </Link>
-          </div>
+            <Button to="/characters">Characters</Button>
+            <Button to="/episodes">Episodes</Button>
+          </ButtonGroup>
         </Paper>
       </Container>
     </Layout>
