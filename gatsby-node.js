@@ -16,24 +16,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       rickandmorty {
         characters {
           info {
-            count
+            pages
           }
         }
       }
     }
   `)
-    
-    const pageCount = result.data.rickandmorty.characters.info.count;
 
-    const charactersTemplate = path.resolve(`src/templates/characters.js`)
-    
-   for (var i = 1; i <= pageCount; i++) {
+  const pageCount = result.data.rickandmorty.characters.info.pages
+
+  const charactersTemplate = path.resolve(`src/templates/characters.js`)
+  for (var i = 1; i <= pageCount; i++) {
     createPage({
       path: `/characters/${i}`,
       component: charactersTemplate,
       context: {
-          page: i,
-          totalPage: pageCount 
+        page: i,
+        totalPage: pageCount,
       },
     })
   }

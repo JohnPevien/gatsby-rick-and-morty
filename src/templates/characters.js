@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Button as ButtonLink}  from 'gatsby-theme-material-ui'
+import { Button as ButtonLink } from 'gatsby-theme-material-ui'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -9,11 +9,15 @@ import CharacterCard from '../components/CharacterCard'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
-const Characters = ({pageContext, data }) => {
-  const { rickandmorty: { characters: { results: charactersData } } } = data;
- 
+const Characters = ({ pageContext, data }) => {
+  const {
+    rickandmorty: {
+      characters: { results: charactersData },
+    },
+  } = data
+
   const renderCard = () => {
     return charactersData.map(character => {
       return (
@@ -25,11 +29,12 @@ const Characters = ({pageContext, data }) => {
   }
 
   const renderNavButtons = () => {
-    const previousPage = pageContext.page - 1;
-    const nextPage = pageContext.page + 1;
+    const previousPage = pageContext.page - 1
+    const nextPage = pageContext.page + 1
 
     return (
-      <Box display="flex"
+      <Box
+        display="flex"
         justifyContent="center"
         alignItems="center"
         mt={4}
@@ -37,7 +42,9 @@ const Characters = ({pageContext, data }) => {
       >
         <ButtonGroup color="primary" size="large">
           <ButtonLink to={`/characters/${previousPage}`}>Previous</ButtonLink>
-          <ButtonLink disabled>Page {pageContext.page} of {pageContext.totalPage}</ButtonLink>
+          <ButtonLink disabled>
+            Page {pageContext.page} of {pageContext.totalPage}
+          </ButtonLink>
           <ButtonLink to={`/characters/${nextPage}`}>Next</ButtonLink>
         </ButtonGroup>
       </Box>
