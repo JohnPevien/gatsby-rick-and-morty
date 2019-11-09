@@ -39,7 +39,7 @@ const CharacterCard = ({
         title="Contemplative Reptile"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2" align="center">
+        <Typography gutterBottom variant="h5" component="h2" align="left">
           {name}
         </Typography>
         <List className={classes.root}>

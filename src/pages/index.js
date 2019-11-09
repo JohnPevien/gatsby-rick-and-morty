@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
+// import ButtonGroup from '@material-ui/core/ButtonGroup'
 import MaterialLink from '@material-ui/core/Link'
 
 const styles = makeStyles(theme => ({
@@ -22,8 +22,7 @@ const styles = makeStyles(theme => ({
     },
   },
   paper: {
-    padding: '1em',
-    fontWeight: '300',
+    padding: '2em',
   },
   getStartedButtonGroup: {
     display: 'flex',
@@ -46,7 +45,7 @@ const IndexPage = () => {
             className={classes.title}
             color="primary"
           >
-            Rick N Morty Browser
+            Rick N Morty
           </Typography>
           <Typography
             variant="h6"
@@ -61,16 +60,17 @@ const IndexPage = () => {
               Rick And Morty API
             </MaterialLink>
           </Typography>
-
-          <ButtonGroup
-            className={classes.getStartedButtonGroup}
-            size="large"
-            color="primary"
-            variant="text"
-          >
-            <Button to="/characters">Characters</Button>
-            <Button to="/episodes">Episodes</Button>
-          </ButtonGroup>
+          <span className={classes.getStartedButtonGroup}>
+            <Button
+              to="/characters/1"
+              variant="outlined"
+              color="primary"
+              align="center"
+              size="medium"
+            >
+              Explore
+            </Button>
+          </span>
         </Paper>
       </Container>
     </Layout>
